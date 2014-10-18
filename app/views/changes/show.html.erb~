@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @change.story.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @change.user.name %>
+</p>
+
+<p>
+  <strong>State from:</strong>
+  <%= @change.state_from.title %>
+</p>
+
+<p>
+  <strong>State to:</strong>
+  <%= @change.state_to.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @change.date %>
+</p>
+
+<%= link_to 'Edit', edit_change_path(@change) %> |
+<%= link_to 'Back', changes_path %>

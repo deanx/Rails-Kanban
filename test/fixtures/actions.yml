@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  story: 
+  date: 2014-10-18 11:27:39
+  state: 
+
+two:
+  user: 
+  story: 
+  date: 2014-10-18 11:27:39
+  state: 

@@ -1,0 +1,13 @@
+class CreateChanges < ActiveRecord::Migration
+  def change
+    create_table :changes do |t|
+      t.references :story, index: true
+      t.references :user, index: true
+      t.integer :state_from
+      t.integer :state_to
+      t.datetime :date
+
+      t.timestamps
+    end
+  end
+end

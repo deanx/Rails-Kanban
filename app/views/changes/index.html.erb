@@ -1,0 +1,39 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<h1>Listing changes</h1>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Story</th>
+      <th>User</th>
+      <th>Initial State</th>
+      <th>Final State</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @changes.each do |change| %>
+      <tr align="center">
+        <td><%= change.story.title %></td>
+        <td><%= change.user.name %></td>
+        <td><%= change.state_from.title %></td>
+        <td><%= change.state_to.title %></td>
+        <td><%= change.date.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td><%= link_to 'Show', change %></td>
+        <td><%= link_to 'Edit', edit_change_path(change) %></td>
+        <td><%= link_to 'Destroy', change, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% @sdiff.each do |diff| %>
+<%= diff %>
+<% end %>
+<br>
+<%= pie_chart Change.group(:state_to).count %>
+
+<%= bar_chart @sdiff %>
+<%= link_to 'New Change', new_change_path %>

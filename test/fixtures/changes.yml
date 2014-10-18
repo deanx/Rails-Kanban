@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  story_id: 
+  user_id: 
+  state_from: 1
+  state_to: 1
+  date: 2014-10-18 15:24:37
+
+two:
+  story_id: 
+  user_id: 
+  state_from: 1
+  state_to: 1
+  date: 2014-10-18 15:24:37

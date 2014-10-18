@@ -1,0 +1,58 @@
+<%= form_for(@change) do |f| %>
+  <% if @change.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@change.errors.count, "error") %> prohibited this change from being saved:</h2>
+
+      <ul>
+      <% @change.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :story_id %><br>
+   <%= f.collection_select(:story_id,
+                            Story.all,
+                            :id,
+                            :title,
+                            { :prompt => true })
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+   <%= f.collection_select(:user_id,
+                            User.all,
+                            :id,
+                            :name,
+                            { :prompt => true })
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :state_from %><br>
+  <%= f.collection_select(:state_from_id,
+                            State.all,
+                            :id,
+                            :title,
+                            { :prompt => true })
+    %>
+</div>
+  </div>
+  <div class="field">
+    <%= f.label :state_to %><br>
+   <%= f.collection_select(:state_to_id,
+                            State.all,
+                            :id,
+                            :title,
+                            { :prompt => true })
+    %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date, :order => [:day,:month,:year] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
